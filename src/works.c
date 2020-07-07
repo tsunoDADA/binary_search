@@ -36,12 +36,9 @@ int main(){
     for(x = 0;x < n;x++){
         sum = sum + A[x];
     }
-    int z;
-    for(z = 0;z <= sum;z++){
-        B[z] = z;
-    }
-    
-    lb = -1;
+//すいません、B[z]は無駄でしたね
+    lb = 0;
+//これもapple.cと同様に、−１だとmidが０になった時不都合なので０にしました。最低仕事量は１ですもんね。
     ub = sum;
     while(ub - lb > 1){
         int mid = (lb + ub) / 2;
@@ -52,7 +49,7 @@ int main(){
             lb = mid;
         }
     }
-    printf("%d\n",B[ub]);
+    printf("%d\n",ub);
 
   return 0;
 }
